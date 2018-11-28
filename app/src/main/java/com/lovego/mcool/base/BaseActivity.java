@@ -7,16 +7,16 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v7.app.ActionBar;
 import android.view.View;
-import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.lovego.mcool.MyApplication;
 import com.lovego.mcool.R;
+import com.lovego.mcool.di.component.ActivityComponent;
+import com.lovego.mcool.di.component.DaggerActivityComponent;
+import com.lovego.mcool.di.module.ActivityModule;
 import com.lovego.mcool.utils.ToastUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import me.yokeyword.fragmentation.SupportActivity;
 
@@ -189,4 +189,12 @@ public abstract class BaseActivity extends SupportActivity implements BaseView, 
     public void onBackPressedSupport() {
         super.onBackPressedSupport();
     }
+
+    protected ActivityComponent getActivityComponent() {
+        return DaggerActivityComponent.builder()
+                .appComponent(MyApplication.getAppComponent())
+                .activityModule(new ActivityModule())
+                .build();
+    }
+
 }

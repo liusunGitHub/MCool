@@ -18,7 +18,7 @@ public class ToastUtils {
 
     private static void initToast() {
         if (mToast == null) {
-            mToast = Toast.makeText(MyApplication.getApplication(), "", Toast.LENGTH_SHORT);
+            mToast = Toast.makeText(MyApplication.getInstance(), "", Toast.LENGTH_SHORT);
         }
     }
 
