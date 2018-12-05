@@ -11,6 +11,6 @@ public interface MainContract {
     }
 
     interface Presenter extends BasePresenter<IView> {
-        void load();
+        void loadData();
     }
 }

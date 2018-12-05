@@ -2,6 +2,7 @@ package com.lovego.mcool.di.component;
 
 import com.lovego.mcool.di.module.AppModule;
 import com.lovego.mcool.di.module.HttpModule;
+import com.lovego.mcool.model.http.DataHelper;
 
 import javax.inject.Singleton;
 
@@ -13,4 +14,5 @@ import dagger.Component;
 @Singleton
 @Component(modules = {AppModule.class, HttpModule.class})
 public interface AppComponent {
+    DataHelper getDataHelper();
 }
