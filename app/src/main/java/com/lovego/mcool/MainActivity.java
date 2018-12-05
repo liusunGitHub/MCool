@@ -19,8 +19,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         super.initData();
         initHeader(true, false, null).setHeaderTitle("首页");
         basePresenter.loadData();
-//        showToastMsg("我是首页"+myApplication);
-
     }
 
 

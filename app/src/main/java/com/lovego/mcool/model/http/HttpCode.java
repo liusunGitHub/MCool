@@ -11,9 +11,9 @@ public interface HttpCode {
     /**
      * 参数为空.
      */
-    int NO_PARAMETER = 1;
+    int NO_PARAMETER = -1;
     /**
      * 服务器错误.
      */
-    int SERVER_ERR = 3;
+    int SERVER_ERR = -3;
 }

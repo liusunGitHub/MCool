@@ -5,7 +5,9 @@ import com.lovego.mcool.base.BaseMvpPresenter;
 import com.lovego.mcool.contract.MainContract;
 import com.lovego.mcool.model.http.BaseHttpResult;
 import com.lovego.mcool.model.http.DataHelper;
+import com.lovego.mcool.model.http.MyRxUtils;
 import com.lovego.mcool.model.http.MySubscriber;
+import com.lovego.mcool.utils.ToastUtils;
 
 import javax.inject.Inject;
 
@@ -30,10 +32,9 @@ public class MainPresenter extends BaseMvpPresenter<MainContract.IView>
                 .subscribeWith(new MySubscriber<BaseHttpResult>(baseView, true) {
                     @Override
                     public void onNext(BaseHttpResult httpNoResult) {
+                        ToastUtils.getInstance().showMsg(httpNoResult.toString());
 
                     }
                 }));
-
-//    baseView.showTipMsg("加载数据");
     }
 }

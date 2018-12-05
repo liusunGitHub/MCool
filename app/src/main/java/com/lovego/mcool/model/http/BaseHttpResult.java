@@ -15,4 +15,11 @@ public class BaseHttpResult {
         return msg == null ? "" : msg;
     }
 
+    @Override
+    public String toString() {
+        return "BaseHttpResult{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                '}';
+    }
 }

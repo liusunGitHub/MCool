@@ -1,22 +1,47 @@
 package com.lovego.mcool.model.http;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
- * Created by lgs on 2018/11/30.
+ * Author: 海晨忆
+ * Date: 2018/2/23
+ * Desc:有解析数据的返回
  */
 public class HttpResult<T> {
-    private T data;
-    private int code;
-    private String msg;
+  private int code;
+  private String msg;
+  @SerializedName(value = "result")
+  private T data;
 
-    public int getCode() {
-        return code;
-    }
+  public int getCode() {
+    return code;
+  }
 
-    public String getMsg() {
-        return msg == null ? "" : msg;
-    }
+  public HttpResult setCode(int code) {
+    this.code = code;
+    return this;
+  }
 
-    public T getData() {
-        return data;
-    }
+  public String getMsg() {
+    return msg;
+  }
+
+  public HttpResult setMsg(String msg) {
+    this.msg = msg;
+    return this;
+  }
+
+  public T getData() {
+    return data;
+  }
+
+  public HttpResult setData(T data) {
+    this.data = data;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return "HttpResult{" + "code=" + code + ", msg='" + msg + '\'' + ", data=" + data + '}';
+  }
 }

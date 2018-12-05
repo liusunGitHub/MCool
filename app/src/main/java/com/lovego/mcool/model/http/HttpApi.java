@@ -16,7 +16,7 @@ public interface HttpApi {
      * @return {"code":0}
      */
     @FormUrlEncoded
-    @POST(ProtocolHttp.METHOD_LOGIN_CODE)
+    @POST(ProtocolHttp.URL_LOGIN_CODE)
     Flowable<BaseHttpResult> loginCode(@Field("phone") String phone);
 }
 
